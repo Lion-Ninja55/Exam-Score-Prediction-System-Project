@@ -1,0 +1,4 @@
+node_modules/
+outputs_project_1/exam_score_model.joblib
+.vscode/
+desktop.ini
