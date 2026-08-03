@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Score Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Exam Score Predictor</h1>
+    <p>Enter student details below to predict the final exam score</p>
+  </header>
+
+  <main>
+    <section class="predictor-section">
+      <h2>Predict Exam Score</h2>
+      <form id="predictForm">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">-- Select Gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="study_time_hours">Study Time (hours/week)</label>
+          <input type="number" id="study_time_hours" name="study_time_hours" step="0.1" min="0" max="24" required placeholder="e.g. 5.0">
+        </div>
+
+        <div class="form-group">
+          <label for="attendance_percent">Attendance (%)</label>
+          <input type="number" id="attendance_percent" name="attendance_percent" step="0.1" min="0" max="100" required placeholder="e.g. 92.0">
+        </div>
+
+        <div class="form-group">
+          <label for="sleep_hours">Sleep Hours (per night)</label>
+          <input type="number" id="sleep_hours" name="sleep_hours" step="0.1" min="0" max="24" required placeholder="e.g. 7.5">
+        </div>
+
+        <div class="form-group">
+          <label for="parental_education">Parental Education</label>
+          <select id="parental_education" name="parental_education" required>
+            <option value="">-- Select Level --</option>
+            <option value="High School">High School</option>
+            <option value="Bachelors">Bachelors</option>
+            <option value="Masters">Masters</option>
+            <option value="PhD">PhD</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="internet_access">Internet Access</label>
+          <select id="internet_access" name="internet_access" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="extracurricular_activities">Extracurricular Activities</label>
+          <select id="extracurricular_activities" name="extracurricular_activities" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="part_time_job">Part Time Job</label>
+          <select id="part_time_job" name="part_time_job" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="previous_grade">Previous Grade</label>
+          <input type="number" id="previous_grade" name="previous_grade" step="0.1" min="0" max="100" required placeholder="e.g. 78.0">
+        </div>
+
+        <button type="submit" class="predict-btn">Predict</button>
+      </form>
+
+      <div id="result" class="result-box hidden"></div>
+    </section>
+
+    <section class="outputs-section">
+      <h2>Model Outputs</h2>
+
+      <div class="model-info" id="modelInfo">
+        <h3>Model Comparison</h3>
+        <div id="modelTable"></div>
+      </div>
+
+      <div class="downloads">
+        <h3>Download Outputs</h3>
+        <div class="download-grid">
+          <a href="/.netlify/functions/download?filename=real_vs_predicted.png" download class="download-card">
+            <span class="icon">📊</span>
+            <span>Real vs Predicted Chart</span>
+          </a>
+          <a href="/.netlify/functions/download?filename=feature_importance.png" download class="download-card">
+            <span class="icon">📈</span>
+            <span>Feature Importance Chart</span>
+          </a>
+          <a href="/.netlify/functions/download?filename=model_comparison.csv" download class="download-card">
+            <span class="icon">📄</span>
+            <span>Model Comparison CSV</span>
+          </a>
+          <a href="/.netlify/functions/download?filename=exam_score_model.joblib" download class="download-card">
+            <span class="icon">💾</span>
+            <span>Trained Model (.joblib)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Exam Score Prediction System &mdash; Project 1</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[functions]]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/predict"
+  to = "/.netlify/functions/predict"
+  status = 200
+
+[[redirects]]
+  from = "/api/model-info"
+  to = "/.netlify/functions/model-info"
+  status = 200
+
+[[redirects]]
+  from = "/api/download/*"
+  to = "/.netlify/functions/download?filename=:splat"
+  status = 200
