@@ -144,7 +144,3 @@ Open `public/index.html` or run a local static server.
 - Add API rate limiting and validation  
 
 ---
-
-## 👤 Author
-**Haris**  
-Full‑stack beginner developer exploring machine learning and web development.
